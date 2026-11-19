@@ -1,0 +1,789 @@
+
+/* ===================================
+   SWETHA BIRTHDAY WEBSITE
+   Luxury Ivory & Champagne Gold Theme
+=================================== */
+
+:root {
+    --ivory: #f8f3e9;
+    --cream: #fffdf8;
+    --gold: #b58a50;
+    --light-gold: #d8bd8e;
+    --espresso: #402c26;
+    --brown: #70564a;
+    --muted: #927c6c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--ivory);
+    color: var(--espresso);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 65px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+    animation: fadeIn 0.9s ease both;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.main-heading,
+.welcome-title,
+.chapter-title,
+.final-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.main-heading {
+    font-size: clamp(34px, 6vw, 52px);
+}
+
+.subheading,
+.welcome-description,
+.chapter-description {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    max-width: 550px;
+    margin: 20px auto;
+}
+
+.tamil-heading {
+    font-family: 'Noto Serif Tamil', serif;
+    color: var(--gold);
+    font-size: 17px;
+    line-height: 2;
+    margin: 18px auto;
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+    position: fixed;
+    z-index: 100;
+    top: 20px;
+    right: 20px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 1px solid var(--light-gold);
+    background: var(--cream);
+    color: var(--gold);
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px #402c2615;
+}
+
+/* LOCK SCREEN */
+
+#lockScreen {
+    background:
+        radial-gradient(circle at top, #fffdf8, transparent 65%),
+        var(--ivory);
+}
+
+.lock-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 28px;
+    background: rgba(255, 253, 248, 0.8);
+    border: 1px solid #d8bd8e80;
+    box-shadow: 0 15px 60px #402c2610;
+}
+
+.top-flower {
+    font-size: 35px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.pin-dots {
+    display: flex;
+    justify-content: center;
+    gap: 17px;
+    margin: 30px 0;
+}
+
+.pin-dots span {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+}
+
+.pin-dots span.filled {
+    background: var(--gold);
+}
+
+.keypad {
+    max-width: 270px;
+    margin: 0 auto 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.keypad button {
+    height: 58px;
+    border: 1px solid #d8bd8e70;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--espresso);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.keypad button:hover {
+    background: #eadbc2;
+    transform: scale(1.06);
+}
+
+.keypad .key-special {
+    color: var(--gold);
+}
+
+.error-message {
+    color: #a34d43;
+    font-size: 12px;
+    margin-top: 15px;
+    display: none;
+}
+
+.pin-hint {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: none;
+    animation: fadeIn 0.5s ease both;
+}
+
+.small-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+/* COMMON BUTTON */
+
+.primary-button {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    background: var(--espresso);
+    color: white;
+    padding: 15px 27px;
+    margin-top: 25px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #402c2620;
+}
+
+/* WELCOME SCREEN */
+
+#welcomeScreen {
+    background:
+        radial-gradient(ellipse at center, #fffdf9 0%, #f8f3e9 70%);
+}
+
+.welcome-content {
+    max-width: 750px;
+}
+
+.welcome-title {
+    font-size: clamp(43px, 8vw, 75px);
+}
+
+.welcome-title span,
+.final-title span {
+    display: block;
+    color: var(--gold);
+    font-style: italic;
+}
+
+.countdown-section {
+    margin: 35px 0 15px;
+}
+
+.countdown-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.count-item {
+    min-width: 75px;
+    padding: 15px 12px;
+    background: var(--cream);
+    border: 1px solid #d8bd8e70;
+}
+
+.count-item span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    color: var(--gold);
+}
+
+.count-item small {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+/* CHAPTER PAGES */
+
+.chapter-container {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+}
+
+.wide-container {
+    max-width: 950px;
+}
+
+.chapter-title {
+    font-size: clamp(36px, 6vw, 58px);
+}
+
+.ornament {
+    font-size: 30px;
+    color: var(--gold);
+    margin: 28px 0;
+}
+
+.story-text {
+    max-width: 620px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 2.1;
+    color: var(--brown);
+}
+
+.story-text p {
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold);
+}
+
+/* PHOTO FRAME */
+
+.photo-frame {
+    width: min(100%, 370px);
+    margin: 40px auto 15px;
+    padding: 12px 12px 20px;
+    background: white;
+    box-shadow: 0 12px 35px #402c2618;
+    transform: rotate(-1deg);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-frame p {
+    margin-top: 15px;
+    color: var(--muted);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+/* MEMORIES GALLERY */
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 40px auto;
+}
+
+.memory-item {
+    padding: 12px 12px 18px;
+    background: white;
+    box-shadow: 0 8px 25px #402c2610;
+    transition: 0.3s;
+}
+
+.memory-item:nth-child(even) {
+    transform: translateY(18px);
+}
+
+.memory-item:hover {
+    transform: translateY(-5px) rotate(0deg);
+}
+
+.memory-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.memory-item p {
+    margin-top: 14px;
+    color: var(--muted);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.memory-ending {
+    max-width: 550px;
+    margin: 45px auto 10px;
+    color: var(--brown);
+    line-height: 2;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 19px;
+}
+
+/* LOVE LETTER */
+
+.letter-card {
+    background: #fffdf7;
+    border: 1px solid #d8bd8e;
+    padding: 40px 35px;
+    margin: 35px auto;
+    max-width: 650px;
+    text-align: left;
+    box-shadow: 0 12px 40px #402c2610;
+    line-height: 2.1;
+    color: var(--brown);
+    font-size: 14px;
+}
+
+.letter-card p {
+    margin-bottom: 22px;
+}
+
+.letter-greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--espresso);
+}
+
+.letter-highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--gold);
+}
+
+.letter-signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--espresso);
+    font-size: 19px;
+}
+
+/* FINAL BIRTHDAY PAGE */
+
+.final-screen {
+    background:
+        radial-gradient(circle at center, #fffdf8, #f5ead7);
+}
+
+.final-content {
+    max-width: 720px;
+}
+
+.birthday-icon {
+    font-size: 65px;
+    margin: 20px 0;
+    animation: heartbeat 2s infinite;
+}
+
+.final-title {
+    font-size: clamp(42px, 7vw, 68px);
+}
+
+.final-message {
+    max-width: 550px;
+    margin: 25px auto;
+    color: var(--brown);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.final-message p {
+    margin-bottom: 18px;
+}
+
+.surprise-message {
+    display: none;
+    max-width: 540px;
+    margin: 35px auto;
+    padding: 30px;
+    background: #fffdf8;
+    border: 1px solid var(--light-gold);
+    box-shadow: 0 12px 35px #402c2615;
+    animation: fadeIn 1s ease;
+}
+
+.surprise-message.show {
+    display: block;
+}
+
+.surprise-message h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.surprise-message p {
+    color: var(--brown);
+    line-height: 2;
+    font-size: 14px;
+}
+
+.surprise-message .final-love {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-top: 20px;
+}
+
+.final-footer {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* FLOATING HEARTS */
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    color: #c29b62;
+    opacity: 0.5;
+    animation: floatUp 7s linear forwards;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .screen {
+        padding: 55px 18px;
+    }
+
+    .lock-card {
+        padding: 35px 18px;
+    }
+
+    .memory-grid {
+        gap: 12px;
+    }
+
+    .memory-item {
+        padding: 8px 8px 13px;
+    }
+
+    .memory-item img {
+        height: 190px;
+    }
+
+    .memory-item p {
+        font-size: 12px;
+    }
+
+    .letter-card {
+        padding: 28px 22px;
+    }
+
+    .photo-frame img {
+        height: 290px;
+    }
+
+    .count-item {
+        min-width: 65px;
+        padding: 12px 8px;
+    }
+
+    .count-item span {
+        font-size: 25px;
+    }
+
+    .primary-button {
+        max-width: 100%;
+        padding: 14px 18px;
+    }
+
+    .music-button {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .floating-hearts {
+        display: none;
+    }
+}
+
+/* EXTRA SMALL MOBILE (iPhone SE, small Android) */
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .screen {
+        padding: 45px 16px;
+        min-height: 100vh;
+    }
+
+    .lock-card {
+        padding: 30px 16px;
+        max-width: 100%;
+    }
+
+    .main-heading {
+        font-size: clamp(28px, 10vw, 44px);
+    }
+
+    .welcome-title {
+        font-size: clamp(34px, 10vw, 60px);
+    }
+
+    .final-title {
+        font-size: clamp(34px, 10vw, 56px);
+    }
+
+    .chapter-title {
+        font-size: clamp(30px, 10vw, 48px);
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .subheading,
+    .welcome-description,
+    .chapter-description {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .keypad {
+        max-width: 240px;
+    }
+
+    .keypad button {
+        height: 52px;
+        font-size: 17px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .count-item {
+        min-width: 55px;
+        padding: 10px 6px;
+    }
+
+    .count-item span {
+        font-size: 22px;
+    }
+
+    .photo-frame {
+        width: min(100%, 300px);
+    }
+
+    .photo-frame img {
+        height: 240px;
+    }
+
+    .story-text {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .highlight-text {
+        font-size: 18px;
+    }
+
+    .letter-card {
+        padding: 24px 18px;
+        font-size: 13px;
+        margin: 25px auto;
+    }
+
+    .letter-greeting {
+        font-size: 20px;
+    }
+
+    .birthday-icon {
+        font-size: 50px;
+    }
+
+    .surprise-message {
+        padding: 20px;
+        margin: 25px auto;
+    }
+
+    .surprise-message h2 {
+        font-size: 22px;
+    }
+
+    .surprise-message .final-love {
+        font-size: 24px;
+    }
+
+    .primary-button {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 11px;
+    }
+
+    .tamil-heading {
+        font-size: 15px;
+        margin: 14px auto;
+    }
+}
+
+/* TINY MOBILE (under 360px) */
+
+@media (max-width: 360px) {
+    .screen {
+        padding: 40px 14px;
+    }
+
+    .lock-card {
+        padding: 25px 14px;
+    }
+
+    .keypad button {
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .count-item {
+        min-width: 50px;
+        padding: 8px 5px;
+    }
+
+    .count-item span {
+        font-size: 20px;
+    }
+
+    .photo-frame img {
+        height: 200px;
+    }
+
+    .primary-button {
+        padding: 14px 16px;
+    }
+}
